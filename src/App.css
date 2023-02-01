@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 400px;
-  height: 100vh;
+  /* height: 100vh; */
   background: rgb(85, 99, 147);
   text-align: center;
 }

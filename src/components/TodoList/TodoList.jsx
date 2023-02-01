@@ -1,19 +1,15 @@
 import cl from "./todolist.module.css"
 import TodoItem from "../TodoItem/TodoItem"
 
-const TodoList = ({ visible, message }) => {
+const TodoList = ({ todos }) => {
   return (
     <div className={cl.wrapper}>
-      <h2>TodoList</h2>
-      <input
-        className="input_task"
-        type='text'
-        placeholder='Введите задачу'
-      />
-      <button className='newTask'>
-        +
-      </button>
-      {visible ? <TodoItem /> : <h4>{message}</h4>}
+      <h2>Список задач</h2>
+      {todos.map((todo, idx) => {
+        return (<div key={idx}>
+          <TodoItem todo={todo} />
+        </div>)
+      })}
     </div>
   )
 }

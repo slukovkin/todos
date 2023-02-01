@@ -1,24 +1,9 @@
 import cl from "./todoitem.module.css"
 
-const TodoItem = (props) => {
-  const { todos, setTodos } = props.todos
-
-  const newTask = (evt) => {
-    setTodos("OK")
-  }
-
+const TodoItem = ({todo}) => {
   return (
     <div>
-      <h2>ToodoItem</h2>
-      <input
-        type='text'
-        placeholder='Введите задачу'
-        value={title}
-        onChange={(evt) => setTodos(evt.target.value)}
-      />
-      <button className='newTask' onClick={newTask}>
-        Создать
-      </button>
+      <h3>{todo}</h3>
     </div>
   )
 }
