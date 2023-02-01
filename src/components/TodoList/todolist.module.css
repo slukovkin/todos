@@ -1,0 +1,10 @@
+.wrapper {
+  margin-top: 20px;
+  padding: 20px;
+  width: 600px;
+  height: 600px;
+  background: rgb(2, 1, 69);
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
