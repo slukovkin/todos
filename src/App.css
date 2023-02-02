@@ -14,3 +14,13 @@ body {
   background: rgb(85, 99, 147);
   text-align: center;
 }
+
+.create_task {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(2, 120, 89);
+  color: wheat;
+  cursor: pointer;
+}
