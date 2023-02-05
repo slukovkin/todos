@@ -1,10 +1,10 @@
-// import sl from "./newtask.module.css"
+import cl from "./newtask.module.css"
 
 import { useState } from "react"
 
 const NewTask = ({addTask}) => {
   const [task, setTask] = useState([])
-  const [id, setId] = useState(Date.now())
+  const [id, setId] = useState("")
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
 
@@ -16,30 +16,34 @@ const NewTask = ({addTask}) => {
       title: title,
       content: content
     }
-    addTask(newTask)
-    setId("")
-    setTitle("")
-    setContent("")
+    if(title !== "" && content !== ""){
+      addTask(newTask)
+      setId("")
+      setTitle("")
+      setContent("")
+    }
   }
 
   return (
     <>
-      <form className='form_task' onSubmit={submitForm}>
+      <form className={cl.form_task} onSubmit={submitForm}>
         <h2>Новая задача</h2>
         <input
           type='text'
-          className='task_title'
+          className={cl.task_title}
           value={title}
+          placeholder = "Введите текс заголовка"
           onChange={(evt) => setTitle(evt.target.value)}
         />
         <textarea
-          cols='30'
+          cols='50'
           rows='10'
-          className='task_content'
+          className={cl.task_content}
           value={content}
+          placeholder = "Введите текс задачи"
           onChange={(evt) => setContent(evt.target.value)}
         ></textarea>
-        <button className='btn_submit' type='submit'>
+        <button className={cl.btn_submit} type='submit'>
           Создать
         </button>
       </form>

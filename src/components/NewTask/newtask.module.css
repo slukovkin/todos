@@ -1,0 +1,35 @@
+
+.form_task {
+  margin: 0px auto;
+  padding: 10px;
+}
+
+.task_title {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  /* background: inherit; */
+  /* border: none; */
+  outline: none;
+  border-bottom: 1px solid white;
+}
+
+.task_content {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  /* border: none; */
+  outline: none;
+  border-bottom: 1px solid white;
+}
+
+.btn_submit {
+  width: 100%;
+  padding: 10px;
+  background: rgb(2, 85, 13);
+  color: wheat;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
