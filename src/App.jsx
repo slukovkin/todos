@@ -6,11 +6,13 @@ import "./App.css"
 const App = () => {
   const [visible, setVisible] = useState(false)
   const [todos, setTodos] = useState([])
-  const [titleBtn, setTitleBtn] = useState("Создать новую задачу")
+  const [titleBtn, setTitleBtn] = useState("")
   const message = "Пока нет созданных задач"
 
   useEffect(() => {
-    visible ? setTitleBtn("Вернуться к списку задач") : setTitleBtn("Создать новую задачу")
+    visible
+      ? setTitleBtn("Вернуться к списку задач")
+      : setTitleBtn("Создать новую задачу")
   }, [visible])
 
   const addTask = (newTask) => {
@@ -22,7 +24,11 @@ const App = () => {
 
   const showTask = () => {}
 
-  const removeTask = () => {}
+  const removeTask = (id) => {
+    setTodos(todos.filter((todo) => {
+      return todo.id != id
+    }))
+  }
 
   const updateTask = () => {}
 
@@ -37,7 +43,7 @@ const App = () => {
       </button>
       {visible && <NewTask addTask={addTask} />}
       {todos.length !== 0 && !visible ? (
-        <TodoList todos={todos} />
+        <TodoList todos={todos} removeTask={removeTask}/>
       ) : (
         <h4>{message}</h4>
       )}
